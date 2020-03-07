@@ -23,5 +23,9 @@ public class Account {
 		this.initialBalance = initialBalance;
 		this.accountType = accountType;
 	}
+	public Account() {
+		super();
+	}
+	
 	
 }
