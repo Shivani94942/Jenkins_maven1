@@ -2,6 +2,7 @@ package com.example.demo.rest;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,9 +14,17 @@ import com.example.demo.service.AccountService;
 @RestController
 public class AccountController {
 
+	
 	private AccountService accountService;
+	
+	@Autowired
+	public AccountController(AccountService accountService) {
+		super();
+		this.accountService = accountService;
+	}
+
 	@RequestMapping("/accounts")
-	public List<Account> getAllAccount() {
+	public List<Account> getAllAccounts() {
 
 		return accountService.getAllAccounts();
 	}
