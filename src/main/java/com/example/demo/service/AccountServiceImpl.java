@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,18 +16,20 @@ public class AccountServiceImpl implements AccountService {
 
 	@Autowired
 	private AccountDAO accountDAO;
-	@Override
-	@Transactional
-	public Iterable<Account> getAllAccount() {
-		// TODO Auto-generated method stub
-		return accountDAO.findAll();
-	}
+	
 
 	@Override
 	@Transactional
 	public Account createAccount(Account account) {
 		// TODO Auto-generated method stub
 		return accountDAO.save(account);
+	}
+
+
+	@Override
+	public List<Account> getAllAccounts() {
+		// TODO Auto-generated method stub
+		return accountDAO.findAll();
 	}
 
 }

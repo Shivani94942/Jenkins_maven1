@@ -1,5 +1,7 @@
 package com.example.demo.rest;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,9 +15,9 @@ public class AccountController {
 
 	private AccountService accountService;
 	@RequestMapping("/accounts")
-	public Iterable<Account> getAllAccount() {
+	public List<Account> getAllAccount() {
 
-		return accountService.getAllAccount();
+		return accountService.getAllAccounts();
 	}
 
 	@PostMapping("/accounts")
